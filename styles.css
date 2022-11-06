@@ -1,0 +1,136 @@
+:root {
+    --darkblue: #202731;
+    --blue: #3c31dd;
+    --red: #dd3f31;
+    --pink: #ff0066;
+    --dark: #0f0f10;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background: var(--darkblue);
+    overflow-x: hidden;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+}
+
+.blue {
+    background: var(--blue);
+}
+
+.red {
+    background: var(--red);
+}
+
+.pink {
+    background: var(--pink);
+}
+
+.dark {
+    background: var(--dark);
+}
+
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
+}
+
+.curve::before {
+    content:'';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: var(--darkblue);
+    transform: translate(85%, 60%);
+}
+
+.curve::after {
+    content:'';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: var(--blue);
+    transform: translate(-4%, 40%);
+    z-index: -1;
+}
+
+.bubble::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    height: 85%;
+    width: 100%;
+    background-color: var(--dark);
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(163% + 1.3px);
+    height: 150px;
+}
+
+.wave .shape-fill {
+    fill: var(--dark);
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('./layered-waves-haikei.svg');
+}
+
+.layer2 {
+    background-image: url('./layered-waves-haikei2.svg');
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.blob-motion {
+    position: absolute;
+    transform: translateY(-20%);
+    z-index: 0;
+}
+
+.blob-content {
+    z-index: 1;
+}
